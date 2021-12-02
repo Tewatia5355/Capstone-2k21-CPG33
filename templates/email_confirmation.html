@@ -1,0 +1,4 @@
+{% autoescape off %} Welcome to Achilles - Engage '21 platform,
+Please Confirm your email by clicking on the following link.
+Confirmation link: http://{{ domain }}{% url 'activate' uid64=uid token=token %}
+{% endautoescape %}

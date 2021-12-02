@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CPG 33 Sigma Testing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Latest compiled and minified Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+    body {
+      background: #F1F2F4;
+      font-family: 'Roboto', sans-serif
+    }
+
+    .card {
+      width: 300px;
+      border: none;
+      border-radius: 0
+    }
+
+    .fa-check {
+      padding: 5px;
+      border: 1px solid #C8C8C8;
+      border-radius: 50%;
+      font-size: 8px
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>CPG 33 Demonstration to detect emotion</h1>
+  <p><small>Made by the Team CPG Team, using Django, hosted on AWS</small></p>
+
+  <div class="container d-flex justify-content-center">
+    <div class="card mt-5 px-4 pt-5 pb-4">
+      <div class="name text-left">
+        <h3>{{ Name }}</h3>
+        <div class="d-flex flex-row"> <small class="text-muted">Authenticated</small> <i class="fas fa-check ml-2"></i>
+        </div>
+        <div class="d-flex flex-row justify-content-between mt-4 pr-4">
+          <div class="d-flex flex-column align-items-center"><small class="text-muted">Age</small>
+            <h6>{{ age }}</h6>
+          </div>
+          <div class="d-flex flex-column align-items-center"><small class="text-muted">Gender</small>
+            <h6>{{ gender }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="controls">
+    <button id="recordButton">Record</button>
+    <button id="pauseButton" disabled>Pause</button>
+    <button id="stopButton" disabled>Stop</button>
+  </div>
+  <div id="formats">Format: start recording to see sample rate</div>
+  <p><strong>Recordings:</strong></p>
+  <ol id="recordingsList"></ol>
+  <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+
+  <button type="submit"><a href="/logout">Logout</a></button>
+</body>
+
+</html>
