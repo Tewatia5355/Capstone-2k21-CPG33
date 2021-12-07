@@ -113,6 +113,7 @@ ENV/
 env.bak/
 venv.bak/
 media/
+input/
 
 # Spyder project settings
 .spyderproject
