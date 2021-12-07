@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import pickle
 import librosa
 import glob, os
 from sklearn.model_selection import train_test_split
@@ -24,7 +25,7 @@ Label_chk = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprise"]
 
 def find_emotion(path):
     model1 = Sequential()
-    model1.add(Conv1D(32, 3, padding="same", input_shape=(x_train.shape[1], 1)))  # 1
+    model1.add(Conv1D(32, 3, padding="same", input_shape=(26, 1)))  # 1
     model1.add(Activation("relu"))
     model1.add(Conv1D(64, 3, padding="same"))  # 2
     model1.add(Activation("relu"))
@@ -53,14 +54,12 @@ def find_emotion(path):
         feature.append(k)
     for k in delta2_m:
         feature.append(k)
+    feat_selector = pickle.load(open('feat_sel.sav', 'rb'))
     feature = feat_selector.transform((pd.DataFrame(feature).to_numpy()).transpose())
-    part = path2.split(".")[0].split("_")
-    label = "".join([x for x in part[2] if not x.isdigit()])
-    df2 = [feature, label]
 
     model1.load_weights("best_model.hdf5")
 
-    tt = model1.predict(df2[0])
+    tt = model1.predict(feature)
     classes_x = np.argmax(tt, axis=1)
 
     return Label_chk[classes_x[0]]
