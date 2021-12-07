@@ -2,18 +2,16 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from ..models import Students, Teachers
 from itertools import chain
+from django.http import JsonResponse
 
 
 @login_required(login_url="login")
-def prof(request):
-    teacher_mapping = Teachers.objects.filter(teacher_id=request.user).select_related(
-        "classroom_id"
-    )
-    student_mapping = Students.objects.filter(student_id=request.user).select_related(
-        "classroom_id"
-    )
-    teachers_all = Teachers.objects.all()
-    mappings = chain(teacher_mapping, student_mapping)
-    return render(
-        request, "auth/index.html", {"mappings": mappings, "teachers_all": teachers_all}
-    )
+def detect(request):
+    if request.method == "POST":
+        data = (request.user.last_name).split(",")
+        age = int(data[0])
+        gender = data[1]
+        return JsonResponse({"message": "Success"})
+
+    return render(request, "auth/rec.html")
+

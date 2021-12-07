@@ -1,3 +1,4 @@
 {
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.pythonPath": "e:\\Microsoft Engage\\CHECKPOINTS\\Django-Profile App\\venv\\Scripts\\python.exe"
 }

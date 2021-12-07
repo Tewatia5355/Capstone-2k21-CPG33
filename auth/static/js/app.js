@@ -149,23 +149,18 @@ function createDownloadLink(blob) {
 	var upload = document.createElement('a');
 	upload.href = "#";
 	upload.innerHTML = "Upload";
+	const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 	upload.addEventListener("click", function (event) {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function (e) {
-			// if (this.readyState === 4) {
-			// 	console.log("Server returned: ", e)
-			// 	alert("Server returned: ", e);
-			// }
 			if (xhr.readyState == XMLHttpRequest.DONE) {
 				alert(xhr.responseText);
 			}
 		};
-
-
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
-		xhr.open("POST", "http://ec2-13-233-162-76.ap-south-1.compute.amazonaws.com:8081/", true);
-
+		fd.append("csrfmiddlewaretoken", csrftoken);
+		xhr.open("POST", "http://localhost:8000/rec", true);
 		xhr.send(fd);
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between

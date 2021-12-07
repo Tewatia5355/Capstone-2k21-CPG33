@@ -51,11 +51,11 @@ def signup(request):
         messages.success(request, "Your Account has been successfully created!")
 
         # Welcome Email
-        subject = "Welcome to Achilles Platform - Engage '21"
+        subject = "Welcome to - Capstone CPG 33, 2k21"
         message = (
             "Hello "
             + myuser.first_name
-            + "!!\nWelcome to Achilles Platform.\nThank you for visiting our Website\nA confirmation mail has been sent to you, please confirm you email\n\nThank You\n Achilles"
+            + "!!\nWelcome to Capstone CPG - 33\nThank you for visiting our Website\nA confirmation mail has been sent to you, please confirm you email\n\nThank You\n Capstone CPG 33"
         )
         from_email = settings.EMAIL_HOST_USER
         to_list = [myuser.email]
@@ -63,7 +63,7 @@ def signup(request):
 
         # Email Confirmation
         current_site = get_current_site(request)
-        email_subject = "Confirm Email Address @ Achilles - Engage '21"
+        email_subject = "Confirm Email - Capstone CPG 33, 2k21 "
         message2 = render_to_string(
             "email_confirmation.html",
             {
@@ -94,16 +94,7 @@ def signin(request):
         user = authenticate(username=email, password=password)
         if user is not None:
             login(request, user)
-            Name = user.first_name
-            Role = (user.last_name).split(",")
-            age = int(Role[0])
-            gender = Role[1]
-
-            return render(
-                request,
-                "auth/home.html",
-                context={"Name": Name, "age": age, "gender": gender},
-            )
+            return redirect("profile")
         else:
             messages.error(request, "Bad Credentials")
             return redirect("home")
@@ -129,13 +120,18 @@ def activate(request, uid64, token):
         myuser.is_active = True
         myuser.save()
         login(request, myuser)
-        Role = (myuser.last_name).split(",")
-        age = int(Role[0])
-        gender = Role[1]
-        return render(
-            request,
-            "auth/home.html",
-            context={"Name": myuser.first_name, "age": age, "gender": gender},
-        )
+        return redirect("profile")
     else:
         return render(request, "activation_failed.html")
+
+
+@login_required(login_url="login")
+def prof(request):
+    Role = (request.user.last_name).split(",")
+    age = int(Role[0])
+    gender = Role[1]
+    return render(
+        request,
+        "auth/home.html",
+        context={"Name": request.user.first_name, "age": age, "gender": gender},
+    )
