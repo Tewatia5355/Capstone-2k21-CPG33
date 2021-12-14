@@ -10,7 +10,8 @@ urlpatterns = [
     path("login", views.signin, name="login"),
     path("logout", views.signout, name="logout"),
     path("rec", views.detect, name="rec"),
-    path("profile", views.prof, name="profile"),
+    path("response/<slug:emotion>", views.response, name="response"),
+    path("profile/", views.prof, name="profile"),
     path("activate/<uid64>/<token>", views.activate, name="activate"),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
