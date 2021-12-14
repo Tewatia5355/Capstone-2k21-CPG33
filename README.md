@@ -1,6 +1,6 @@
 # Capstone-2k21-CPG33
 
-## Guide to Use Achilles
+## Guide to Use Project
 #### Install
 
 ```
