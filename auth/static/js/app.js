@@ -156,7 +156,7 @@ function createDownloadLink(blob) {
 		var fd = new FormData();
 		fd.append("audio_data", blob, filename);
 		fd.append("csrfmiddlewaretoken", csrftoken);
-		xhr.open("POST", "http://localhost:8000/rec", false);
+		xhr.open("POST", "https://converse.cloudns.nz/rec", false);
 		xhr.send(fd);
 	})
 	li.appendChild(document.createTextNode(" "))//add a space in between
