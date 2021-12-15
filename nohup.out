@@ -1,0 +1,46 @@
+Watching for file changes with StatReloader
+2021-12-15 14:35:12.639643: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-12-15 14:35:12.639676: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[15/Dec/2021 14:35:39] "GET / HTTP/1.1" 200 13419
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/aos/aos.css HTTP/1.1" 200 26053
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/glightbox/css/glightbox.min.css HTTP/1.1" 200 13785
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/boxicons/css/boxicons.min.css HTTP/1.1" 200 63781
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/bootstrap-icons/bootstrap-icons.css HTTP/1.1" 200 73271
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/swiper/swiper-bundle.min.css HTTP/1.1" 200 15563
+[15/Dec/2021 14:35:39] "GET /static/assets/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 163873
+[15/Dec/2021 14:35:39] "GET /static/assets/css/style.css HTTP/1.1" 200 29576
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/purecounter/purecounter.js HTTP/1.1" 200 4951
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/aos/aos.js HTTP/1.1" 200 14690
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/isotope-layout/isotope.pkgd.min.js HTTP/1.1" 200 35445
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/glightbox/js/glightbox.min.js HTTP/1.1" 200 56222
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 78129
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/swiper/swiper-bundle.min.js HTTP/1.1" 200 135617
+[15/Dec/2021 14:35:40] "GET /static/assets/images/hero-img.png HTTP/1.1" 200 52533
+[15/Dec/2021 14:35:40] "GET /static/assets/img/hero-bg.jpg HTTP/1.1" 404 1835
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/php-email-form/validate.js HTTP/1.1" 200 2646
+[15/Dec/2021 14:35:40] "GET /static/assets/js/main.js HTTP/1.1" 200 6125
+[15/Dec/2021 14:35:40] "GET /static/assets/img/counts-bg.png HTTP/1.1" 404 1841
+[15/Dec/2021 14:35:40] "GET /static/assets/images/about.jpg HTTP/1.1" 200 35293
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?a74547b2f0863226942ff8ded57db345 HTTP/1.1" 200 92004
+[15/Dec/2021 14:35:40] "GET /static/assets/vendor/boxicons/fonts/boxicons.woff2 HTTP/1.1" 200 102988
+[15/Dec/2021 14:35:40] "GET /static/assets/images/favicon.png HTTP/1.1" 200 491
+[15/Dec/2021 14:35:45] "GET /login HTTP/1.1" 200 4634
+[15/Dec/2021 14:35:45] "GET /static/vendor/animate/animate.css HTTP/1.1" 200 23848
+[15/Dec/2021 14:35:45] "GET /static/fonts/font-awesome-4.7.0/css/font-awesome.min.css HTTP/1.1" 200 31000
+[15/Dec/2021 14:35:45] "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 124962
+[15/Dec/2021 14:35:45] "GET /static/vendor/css-hamburgers/hamburgers.min.css HTTP/1.1" 200 19680
+[15/Dec/2021 14:35:45] "GET /static/css/util.css HTTP/1.1" 200 83821
+[15/Dec/2021 14:35:45] "GET /static/css/main.css HTTP/1.1" 200 8606
+[15/Dec/2021 14:35:45] "GET /static/vendor/jquery/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[15/Dec/2021 14:35:45] "GET /static/vendor/bootstrap/js/popper.js HTTP/1.1" 200 81670
+[15/Dec/2021 14:35:46] "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 51143
+[15/Dec/2021 14:35:46] "GET /static/vendor/select2/select2.min.js HTTP/1.1" 200 66664
+[15/Dec/2021 14:35:46] "GET /static/vendor/tilt/tilt.jquery.min.js HTTP/1.1" 200 5640
+[15/Dec/2021 14:35:46] "GET /static/js/main.js HTTP/1.1" 200 2450
+[15/Dec/2021 14:35:46] "GET /static/images/img-01.png HTTP/1.1" 200 8599
+[15/Dec/2021 14:35:46] "GET /static/fonts/poppins/Poppins-Medium.ttf HTTP/1.1" 200 143516
+[15/Dec/2021 14:35:46] "GET /static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160
+[15/Dec/2021 14:35:46] "GET /static/fonts/poppins/Poppins-Bold.ttf HTTP/1.1" 200 141260
+[15/Dec/2021 14:35:46] "GET /static/fonts/poppins/Poppins-Regular.ttf HTTP/1.1" 200 145312
+[15/Dec/2021 14:35:46] "GET /static/fonts/montserrat/Montserrat-Bold.ttf HTTP/1.1" 200 261588
+[15/Dec/2021 14:35:46] "GET /static/images/icons/favicon.ico HTTP/1.1" 200 32038

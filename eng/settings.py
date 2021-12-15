@@ -18,9 +18,9 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = "django-insecure-+2jc196%2imdrf*3erqqafw3ia&w$p*^#urk_32@mf)9vkp0ju"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".converse.cloudns.nz"]
 
 
 # Application definition
@@ -94,13 +94,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SECURE_HSTS_SECONDS = 2_592_000 # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Kolkata"
 
 USE_I18N = True
 
@@ -112,7 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
+STATIC_ROOT = "/var/www/converse.cloudns.nz/static"
 STATIC_URL = "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "auth/static/")]
 MEDIA_URL = "media/"
