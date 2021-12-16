@@ -19,7 +19,7 @@ def home(request):
     return render(request, "auth/index.html")
 
 
-@login_excluded("home")
+@login_excluded("profile")
 def signup(request):
     if request.method == "POST":
         name = request.POST["nam"]
@@ -86,7 +86,7 @@ def signup(request):
     return render(request, "auth/signup.html")
 
 
-@login_excluded("home")
+@login_excluded("profile")
 def signin(request):
     if request.method == "POST":
         email = request.POST["email"]
@@ -109,7 +109,7 @@ def signout(request):
     return redirect("home")
 
 
-@login_excluded("home")
+@login_excluded("profile")
 def activate(request, uid64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uid64))
