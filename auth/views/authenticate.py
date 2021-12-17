@@ -48,8 +48,6 @@ def signup(request):
         myuser.is_active = False
         myuser.save()
 
-        messages.success(request, "Your Account has been successfully created!")
-
         # Welcome Email
         subject = "Welcome to - Capstone CPG 33, 2k21"
         message = (
@@ -81,7 +79,7 @@ def signup(request):
         )
         email.fail_silently = True
         email.send()
-        messages.success(request, "Confirm your Email-ID to Login")
+        messages.success(request, "Account Created! Confirm your Email-ID to Login")
         return redirect("home")
     return render(request, "auth/signup.html")
 

@@ -40,9 +40,9 @@
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <div class="fixed-top">
+  <header id="header">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="#">Capstone CPG 33</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
@@ -58,8 +58,10 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
-
+  </header>
+  </div>
+  <!-- End Header -->
+ 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
@@ -307,7 +309,11 @@
 
   <!-- Template Main JS File -->
   <script src='{% static "assets/js/main.js" %}'></script>
-
+  <script>
+	  {% for message in messages %}
+		alert(" {{ message }} ");
+	  {% endfor %}
+  </script>
 </body>
 
 </html>
