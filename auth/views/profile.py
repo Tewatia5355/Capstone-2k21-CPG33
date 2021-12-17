@@ -43,7 +43,7 @@ def response(request,emotion):
             data_link = "https://www.facebook.com/"
         elif emotion == "disgust":
             extension = ".mp3"
-            data_body = "Watch something on Youtube to get diverted"
+            data_body = "Watch something on Youtube to divert your mind"
             data_link = "https://www.youtube.com/"
         elif emotion == "fear":
             data_body = "Wanna listen to some sleep playlist at"
@@ -54,20 +54,20 @@ def response(request,emotion):
         response_path = "response/night_" + response_path + extension
     else:
         if emotion == "happy":
-            data_body = "let's netflix and chill"
-            data_link = "https://www.netflix.com"
+            data_body = "Glad to hear you're happy!"
+            data_link = ""
         elif emotion == "sad":
-            data_body = "You can connect to someone on social media"
+            data_body = "You can connect to a close friend on social media"
             data_link = "https://www.facebook.com/"
         elif emotion == "angry":
             extension = ".mp3"
-            data_body = "Wanna listen to some calm playlist at"
+            data_body = "Count from 1-10 and listen to a calm playlist at"
             data_link = "https://www.spotify.com/us/"
         elif emotion == "surprise":
-            data_body = "Wanna order some food online"
-            data_link = "https://www.zomato.com"
+            data_body = "Tell me more about it."
+            data_link = ""
         elif emotion == "disgust":
-            data_body = "Watch something on Youtube to get diverted"
+            data_body = "Watch something on Youtube to divert your mind"
             data_link = "https://www.youtube.com/"
         elif emotion == "fear":
             data_body = "Watch some Yoga videos and calm down"
