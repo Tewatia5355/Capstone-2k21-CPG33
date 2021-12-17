@@ -133,3 +133,63 @@ def prof(request):
         "auth/home.html",
         context={"Name": request.user.first_name, "age": age, "gender": gender},
     )
+
+@login_excluded("profile")
+def forget_pass_req(request):
+    # Email to user for new password
+    if request.method == "POST":
+        try:
+            myuser = User.objects.filter(username=request.POST["email"])
+            myuser = myuser[0]
+        except Exception as e:
+            messages.success(request, "Email is not valid")
+            return redirect("home")
+        current_site = get_current_site(request)
+        email_subject = "Recover Password @ Capstone 2k21 - CPG 33"
+        message2 = render_to_string(
+            "forget_pass.txt",
+            {
+                "domain": current_site.domain,
+                "uid": urlsafe_base64_encode(force_bytes(myuser.pk)),
+                "token": generate_token.make_token(myuser),
+            },
+        )
+        print("\nHeree\n")
+        email = EmailMessage(
+            email_subject,
+            message2,
+            settings.EMAIL_HOST_USER,
+            [myuser.email],
+        )
+        email.fail_silently = False
+        email.send()
+        print("\nMailsent\n")
+        messages.success(request, "Recovery email is sent!!")
+        return redirect("home")
+    return render(request, "auth/forget.html")
+
+
+@login_excluded("profile")
+def forget_pass(request, uid64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uid64))
+        myuser = User.objects.get(pk=uid)
+    except Exception as e:
+        myuser = None
+    if myuser is not None and generate_token.check_token(myuser, token):
+        if request.method == "POST":
+            password = request.POST["cpass"]
+            myuser.set_password(password)
+            myuser.save()
+            messages.success(request, "New password is set succesfully!")
+            return redirect("home")
+        return render(
+            request,
+            "auth/forget_req.html",
+            {
+                "uid64": uid64,
+                "token": token,
+            },
+        )
+    messages.success(request, "Unauthorized Access!!")
+    return redirect("home")
