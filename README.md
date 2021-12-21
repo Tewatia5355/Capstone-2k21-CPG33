@@ -10,6 +10,16 @@ git clone https://github.com/Tewatia5355/Capstone-2k21-CPG33.git
 
 #### Usage
 
+##### Secret variables
+
+Before running the application you need to fill 3 variables in ```eng\info.py``` 
+```
+EMAIL_HOST =  ## enter email host, i.e. 'smtp.gmail.com'
+EMAIL_HOST_USER = ## enter email address
+EMAIL_HOST_PASSWORD = ## enter passwrod of email address
+```
+
+
 For first time:
 ```
 cd Capstone-2k21-CPG33
