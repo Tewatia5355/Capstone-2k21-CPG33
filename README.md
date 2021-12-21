@@ -1,5 +1,18 @@
 # Capstone-2k21-CPG33
 
+Project: Human Machine Dialogue System involving Sentiment Analysis. 
+Capstone Project (Thapar Institute of Engineering and Technology, Patiala) 
+Capstone Group: 33
+Branch: Computer Engineering (2022 batch).
+
+Mentor: Dr. HS Pannu
+Members:
+Aayushi Gupta
+Pranav Khullar
+Vidisha Verma
+Yash Kumar
+
+
 ## Guide to Use Project
 #### Install
 
